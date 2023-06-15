@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thet naing tun</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<style>
+  
+    .top{
+        z-index: 1;
+      
+        position: sticky;
+        top:70px;
+        margin-bottom: 70px;
+     
+    }
+    .bot{
+        background-color: white;
+        z-index: 2;
+        position: sticky;
+      
+    }
+    .red{
+        position: relative;
+        cursor: pointer;
+      
+    }
+    .red::after{
+        content:"";
+        width:100%;
+        height:3px;
+        background-color: red;
+        position: absolute;
+        bottom:-4px;
+        left:0px;
+        display:none;
+        transition: 0.5s;
+    }
+    .red:hover::after{
+        display:block;
+        animation: hover 0.5s;
+    }
+    @keyframes hover {
+        0%{width:2%}
+        100%{width:100%}
+    }
+    nav{
+        position: fixed;
+        z-index: 4;
+        top:0px;
+    }
+    #cat{
+        display:none ;
+    border-radius: 9px;
+
+    }
+    .cat{
+        display:flex !important;
+        animation: cat 2s;
+      background-color: rgb(0, 0, 0);
+        color:yellow !important;
+    }
+    @keyframes cat {
+        0%{transform: scale(0.2);}
+        50%{
+           
+            color:black;
+        }
+        100%{transform: scale(1);}
+    }
+    .buy{
+        position: relative;
+        cursor: pointer;
+         height:230px !important;
+        overflow: hidden;
+        
+        padding-bottom: 10px;
+    }
+    .im{
+        height:150px ;
+    }
+    body{
+        margin: 0px;
+    }
+    .buy::after{
+        content:"Buy";
+        width:100%;
+        height:50%;
+        background-color: rgb(255, 255, 255);
+        position:absolute;
+
+        top:0px;left:0px;
+        display: none;
+       
+        font-size: xx-large;
+        opacity: 0.4;
+        color:rgb(0, 0, 0);
+        font-weight: bolder;
+        border-radius: 8px;
+
+    }
+    .buy:hover::after{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: buy 1s;
+    }
+    @keyframes buy {
+        0%{top:-100px;}
+        100%{top:0px;}
+    }
+    .title{
+        font-family: 'Noto Serif', serif;
+    }
+    .imgopa{
+       
+    }
+  body{
+    background-color: rgb(255, 255, 255) !important;
+  }
+    .cart{
+        text-align: center;
+        font-family: 'Noto Serif', serif;
+        background-color: yellow;
+        padding: 7px;
+        display: none;
+    }
+    .price{
+display:flex;
+flex-direction: row;
+animation: pr 1s;
+    }
+    .buy:hover .price{
+        animation: buymove 0.5s;
+   transform: translateX(-200px);
+
+    }
+    .buy:hover .cart{
+        display:block !important;
+        animation: cartmove 1s;
+        transform: translateY(-20px);
+
+    
+    }
+    @keyframes buymove {
+        0%{transform: translateX(0px);;}
+        100%{transform:translateX(-200px)}
+    }
+    @keyframes pr {
+        0%{transform: translateX(-200px);;}
+        100%{transform:translateX(0px)}
+    }
+    @keyframes cartmove {
+        0%{transform: translateY(30px);}
+        100%{transform: translateY(-20px);}
+    }
+    .ti{
+        color:rgb(0, 170, 255) !important;
+    }
+    .con{
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+    @media only screen and (max-width:800px){
+        .top{ flex-direction: column !important;
+        background-color: rgb(249, 249, 249);
+        width:100% !important;
+    height:600px !important;
+padding:20px !important;}
+    .imgopa{
+        margin-left:10px  !important;
+        width:100% !important;
+        margin-top: 20px;
+    }
+    .ti{
+        font-size: large !important;
+        color:rgb(0, 170, 255) !important;
+        margin-top: 10px !important;
+        background-color: white !;
+    }
+    #t{
+        font-size: XX-large  !important;
+        margin-top: -80px !important;
+        color:black !important
+    }
+    body{
+        background-color: rgb(255, 255, 255) !important;
+    }
+    .top{
+        margin-bottom: 30px !important;
+    }
+    .navnone{
+        display: none;
+    }
+    .menu{
+        display: block !important;
+        cursor: pointer;
+    }
+    #cat{width:90% !important;
+    font-size: medium !important;
+left:5% !important;
+background-color: black !important;
+color:yellow !important}
+    .con{
+        width:100%  !important;
+        justify-content: center;
+        gap:50px !important;
+        padding:5px !important;
+        
+    }
+    .buy{width:180px !important;padding:6px;
+     
+    height:auto  !important}
+    }
+
+
+    .menu{
+        display:none;
+    }
+    .menud{
+        position: absolute;
+        z-index: 3;
+        top:0px;
+        display:none !important;
+        right:0px;
+    }
+    .about:hover{
+    cursor: pointer;
+    background-color: black;
+    color:white;
+    padding:10px 20px;
+    }
+    .menudd{
+        display:flex !important;
+    }
+    .boy{
+        overflow: hidden !important;
+    }
+</style>
+<body>
+    <nav class="flex w-[100vw] h-[70px] shadow-lg flex-row text-[yellow] text-[13px] font-bold bg-[black] justify-center items-center gap-8">
+      <h1 class="navnone">HOME</h1>
+      <h1 class="navnone">ABOUT US</h1>
+      <h1 class="navnone">WINES</h1>
+      <h1 class="ml-10 mr-10 text-[20px]">HONEY BOBA</h1>
+      <h1 class="navnone">VINEYARDS</h1>
+      <h1 class="navnone">CONTACT</h1>
+      <h1 class="navnone">BUY NOW</h1>
+      <img class="menu w-[30px] h-[30px] bg-red-400 ml-auto mr-10  " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2MgbOmjW5XamxCqhYpYU4cUJBoR5tCErAnA&usqp=CAU">
+      
+    
+      
+    </nav>
+    <div class="menud w-[100vw] gap-10 h-[100vh] bg-blue-200 flex flex-col justify-center items-center" >
+        <h1 class="about">HOME</h1>
+        <h1 class="about">ABOUT US</h1>
+        <h1 class="about">WINES</h1>
+    
+        <h1 class="about">VINEYARDS</h1>
+        <h1 class="about">CONTACT</h1>
+    </div>
+    <div class=" top flex flex-row justify-center items-center mt-[100px]">
+        <div class="p-4">
+            <h1 id="t" class="text-[black] text-[60px] font-bold mb-4">EXPLORE OUR <br>
+            WIDE VARIETY<br>
+             OF TEAS</h1>
+             <div class="flex flex-row">
+                <p class="px-6 py-3 bg-red-700 text-white text-[18px] mr-5">BOOK A TOUR</p>
+                <p class="px-6 py-3 bg-green-200 text-black text-[18px]">OUR TEAS</p>
+             </div>
+        </div>
+        <img class="imgopa ml-[200px] w-[800px] shadow-lg rounded-lg" src="https://www.orientalwebshop.nl/media/catalog/product/cache/6749953eb8b7bf5df943b7c095b88d56/f/r/fruity-bubble-tea-recipes.jpg">
+    </div>
+   
+    <div class="bot w-[100vw] h-[auto] flex flex-col  items-center justify-center ">
+     <div class="ti w-[70%] text-[#b68834] font-bold h-[50px] mt-[30px] flex flex-row justify-between items-center text-[20px]">
+        <h1>Honey boba product</h1><h1>Top Rate</h1>
+     </div>
+    <div id="con" class="con border w-[70%] h-[1500px] flex flex-row gap-[70px] p-10 mt-[10px]">
+        <div class="buy w-[250px] h-[200px]  ">
+            <img class="im p w-[100%] rounded-lg mb-3" src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/12/30144350/Bubble-tea-in-Delhi-2.jpg?tr=w-1200,h-900">
+           <div class="price">
+            <h1 class=" ml-3 text-[#b68834] ">Orange tea</h1>
+            <h1 class=" ml-4 ">1200ks</h1></div>
+            <h1 class="cart">ADD TO CART</h1>
+        </div>
+        <div class="buy w-[250px] h-[200px]  ">
+            <img class="im w-[100%] rounded-lg mb-3" src="https://curlytales.com/wp-content/uploads/2023/01/bubble-tea-cover-1-1170x658.jpg">
+            <div class="price">
+            <h1 class="  ml-3 text-[#b68834] ">Orange tea</h1>
+            <h1 class=" ml-4 ">1200ks</h1></div>
+            <h1 class="cart ">ADD TO CART</h1>
+        
+        </div>
+        <div class="buy w-[250px] h-[200px]  ">
+            <img class="im w-[100%] rounded-lg mb-3" src="https://www.swtimes.com/gcdn/presto/2021/01/26/NA36/16e7abc9-abc5-47db-88cf-144abb7756b5-BaodUp-Oct2020-6030.jpg?width=660&height=441&fit=crop&format=pjpg&auto=webp">
+            <div class="price">
+            <h1 class=" price ml-3 text-[#b68834] inline-block">Orange tea</h1>
+            <h1 class="price ml-4 inline">1200ks</h1></div>
+            <h1 class=" cart ">ADD TO CART</h1>
+        </div>
+        <div class="buy w-[250px] h-[200px]  ">
+            <img class="im w-[100%] rounded-lg mb-3" src="https://hips.hearstapps.com/hmg-prod/images/explainer-lead-boba-1658948967.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*">
+            <div class="price">
+            <h1 class="price ml-3 text-[#b68834] inline-block">Orange tea</h1>
+            <h1 class="price ml-4 inline">1200ks</h1></div>
+            <h1 class="cart ">ADD TO CART</h1>
+        </div>
+        <div class="buy w-[250px] h-[200px]  ">
+            <img class="im w-[100%] rounded-lg mb-3" src="https://hips.hearstapps.com/hmg-prod/images/explainer-lead-boba-1658948967.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*">
+            <div class="price">
+            <h1 class="price ml-3 text-[#b68834] inline-block">Orange tea</h1>
+            <h1 class="price ml-4 inline">1200ks</h1></div>
+            <h1 class="cart ">ADD TO CART</h1>
+        </div>
+    
+        <div class="buy w-[250px] h-[200px]  ">
+            <img class="im w-[100%] rounded-lg mb-3" src="https://hips.hearstapps.com/hmg-prod/images/explainer-lead-boba-1658948967.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*">
+            <div class="price">
+            <h1 class="price ml-3 text-[#b68834] inline-block">Orange tea</h1>
+            <h1 class="price ml-4 inline">1200ks</h1></div>
+            <h1 class="cart ">ADD TO CART</h1>
+        </div>
+    
+        <div class="buy w-[250px] h-[200px]  ">
+            <img class="im w-[100%] rounded-lg mb-3" src="https://hips.hearstapps.com/hmg-prod/images/explainer-lead-boba-1658948967.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*">
+            <div class="price">
+            <h1 class="price ml-3 text-[#b68834] inline-block">Orange tea</h1>
+            <h1 class="price ml-4 inline">1200ks</h1></div>
+            <h1 class="cart ">ADD TO CART</h1>
+        </div>
+    
+        <div class="buy w-[250px] h-[200px]  ">
+            <img class="im w-[100%] rounded-lg mb-3" src="https://hips.hearstapps.com/hmg-prod/images/explainer-lead-boba-1658948967.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*">
+            <div class="price">
+            <h1 class="price ml-3 text-[#b68834] inline-block">Orange tea</h1>
+            <h1 class="price ml-4 inline">1200ks</h1></div>
+            <h1 class="cart ">ADD TO CART</h1>
+        </div>
+    
+   
+    </div>
+    <div id="cat" class=" flex flex-row   text-[yellow] text-[23px] items-center
+    justify-evenly w-[50%] shadow-lg h-[50px] fixed left-[25%] bottom-[100px]">
+   
+   <h1 class="red">Green tea</h1> <h1 class="red" >Bubble tea</h1><h1 class="red">Tea</h1><h1 class="red">Juices</h1>
+   </div>
+    <script>
+     const c = document.getElementById("cat");
+     window.addEventListener("scroll",function(){
+        console.log(scrollY)
+        if(scrollY > 400){
+            c.classList.add("cat")
+        }
+        else{
+            c.classList.remove("cat")
+        }
+     })
+    </script>
+    <script>
+        const button = document.getElementById("cat");
+        button.addEventListener("click",function(){
+            console.log("enter")
+window.scroll(
+  {  top:300,behavior:"smooth"}
+)
+        })
+    </script>
+    <script>
+        $(".menu").click(function(){
+            console.log("e")
+            $("body").addClass("boy")
+        $(".menud").addClass("menudd")
+          $(".about").click(function(){
+            $(".menud").removeClass("menudd")
+            $("body").removeClass("boy")
+          })
+        })
+    </script>
+</body>
+</html>
