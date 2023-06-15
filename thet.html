@@ -84,7 +84,7 @@
         padding-bottom: 10px;
     }
     .im{
-        height:150px ;
+        height:auto;
     }
     body{
         margin: 0px;
@@ -129,7 +129,7 @@
         text-align: center;
         font-family: 'Noto Serif', serif;
         background-color: yellow;
-        padding: 7px;
+        padding: 2px;
         display: none;
     }
     .price{
@@ -196,13 +196,51 @@ padding:20px !important;}
     .top{
         margin-bottom: 30px !important;
     }
+    .buy::after{
+        content:"Buy";
+        width:100%;
+        height:30%;
+        background-color: rgb(255, 255, 255);
+        position:absolute;
+
+        top:0px;left:0px;
+        display: none;
+       
+        font-size: xx-large;
+        opacity: 0.4;
+        color:rgb(0, 0, 0);
+        font-weight: bolder;
+        border-radius: 8px;
+
+    }
     .navnone{
         display: none;
+    }
+    .price{
+        font-size: small;
     }
     .menu{
         display: block !important;
         cursor: pointer;
     }
+    .cart{
+        font-size: small !important;
+    }
+    .buy:hover .cart{
+        display:block !important;
+        animation: cartmove 1s;
+        transform: translateY(-40px);
+        width:100%;
+        height:auto;
+        font-size: medium !important;
+
+    
+    }
+    @keyframes cartmove {
+        0%{transform: translateY(30px);}
+        100%{transform: translateY(-40px);}
+    }
+
     #cat{width:90% !important;
     font-size: medium !important;
 left:5% !important;
@@ -289,14 +327,14 @@ color:yellow !important}
            <div class="price">
             <h1 class=" ml-3 text-[#b68834] ">Orange tea</h1>
             <h1 class=" ml-4 ">1200ks</h1></div>
-            <h1 class="cart">ADD TO CART</h1>
+            <p class="cart">ADD TO CART</p>
         </div>
         <div class="buy w-[250px] h-[200px]  ">
             <img class="im w-[100%] rounded-lg mb-3" src="https://curlytales.com/wp-content/uploads/2023/01/bubble-tea-cover-1-1170x658.jpg">
             <div class="price">
             <h1 class="  ml-3 text-[#b68834] ">Orange tea</h1>
             <h1 class=" ml-4 ">1200ks</h1></div>
-            <h1 class="cart ">ADD TO CART</h1>
+            <p class="cart ">ADD TO CART</p>
         
         </div>
         <div class="buy w-[250px] h-[200px]  ">
@@ -304,29 +342,21 @@ color:yellow !important}
             <div class="price">
             <h1 class=" price ml-3 text-[#b68834] inline-block">Orange tea</h1>
             <h1 class="price ml-4 inline">1200ks</h1></div>
-            <h1 class=" cart ">ADD TO CART</h1>
+            <p class=" cart ">ADD TO CART</p>
         </div>
         <div class="buy w-[250px] h-[200px]  ">
             <img class="im w-[100%] rounded-lg mb-3" src="https://hips.hearstapps.com/hmg-prod/images/explainer-lead-boba-1658948967.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*">
             <div class="price">
             <h1 class="price ml-3 text-[#b68834] inline-block">Orange tea</h1>
             <h1 class="price ml-4 inline">1200ks</h1></div>
-            <h1 class="cart ">ADD TO CART</h1>
+            <p class="cart ">ADD TO CART</p>
         </div>
         <div class="buy w-[250px] h-[200px]  ">
             <img class="im w-[100%] rounded-lg mb-3" src="https://hips.hearstapps.com/hmg-prod/images/explainer-lead-boba-1658948967.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*">
             <div class="price">
             <h1 class="price ml-3 text-[#b68834] inline-block">Orange tea</h1>
             <h1 class="price ml-4 inline">1200ks</h1></div>
-            <h1 class="cart ">ADD TO CART</h1>
-        </div>
-    
-        <div class="buy w-[250px] h-[200px]  ">
-            <img class="im w-[100%] rounded-lg mb-3" src="https://hips.hearstapps.com/hmg-prod/images/explainer-lead-boba-1658948967.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*">
-            <div class="price">
-            <h1 class="price ml-3 text-[#b68834] inline-block">Orange tea</h1>
-            <h1 class="price ml-4 inline">1200ks</h1></div>
-            <h1 class="cart ">ADD TO CART</h1>
+            <p class="cart ">ADD TO CART</p>
         </div>
     
         <div class="buy w-[250px] h-[200px]  ">
@@ -334,7 +364,7 @@ color:yellow !important}
             <div class="price">
             <h1 class="price ml-3 text-[#b68834] inline-block">Orange tea</h1>
             <h1 class="price ml-4 inline">1200ks</h1></div>
-            <h1 class="cart ">ADD TO CART</h1>
+            <p class="cart ">ADD TO CART</p>
         </div>
     
         <div class="buy w-[250px] h-[200px]  ">
@@ -342,7 +372,15 @@ color:yellow !important}
             <div class="price">
             <h1 class="price ml-3 text-[#b68834] inline-block">Orange tea</h1>
             <h1 class="price ml-4 inline">1200ks</h1></div>
-            <h1 class="cart ">ADD TO CART</h1>
+            <p class="cart ">ADD TO CART</p>
+        </div>
+    
+        <div class="buy w-[250px] h-[200px]  ">
+            <img class="im w-[100%] rounded-lg mb-3" src="https://hips.hearstapps.com/hmg-prod/images/explainer-lead-boba-1658948967.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*">
+            <div class="price">
+            <h1 class="price ml-3 text-[#b68834] inline-block">Orange tea</h1>
+            <h1 class="price ml-4 inline">1200ks</h1></div>
+            <p class="cart ">ADD TO CART</p>
         </div>
     
    
